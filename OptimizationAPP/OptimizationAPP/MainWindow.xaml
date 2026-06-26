@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:OptimizationAPP"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+      
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -13,26 +14,22 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
-            <Button x:Name="btnStart" Content="Start" FontSize="25" FontWeight="DemiBold" Height="40" Background="White" Click="btnStart_Click" />
-            <Button x:Name="btnTempFiles" Content="Temp Files" FontSize="15" Height="40" Background="White" Click="btnTemp_Click"/>
-            <Button x:Name="btnBasicDisk" Content="Basic Disk" FontSize="15" Height="40" Background="White" Click="btnDisk_Click"/>
-            <Button x:Name="btnDeepTempFiles" Content="Deep Temp Files" FontSize="15" Height="40" Background="White" Click="btnDeepTemp_Click"/>
-            <Button x:Name="btnPrefetch" Content="Prefetch" FontSize="15" Height="40" Background="White" Click="btnPrefetch_Click"/>
-            <Button x:Name="btnEventViewer" Content="Event Viewer" FontSize="15" Height="40" Background="White" Click="btnEvent_Click"/>
-            <Button x:Name="btnAdvancedDisk" Content="Advanced Disk" FontSize="15" Height="40" Background="White" Click="btnAdvDisk_CLick"/>
-            <Button x:Name="btnNvidiaSettings" Content="Nvidia Settings" FontSize="15" Height="40" Background="White"/>
-        </StackPanel>
-
-        <Expander Name="expProcess" Background="DimGray" Grid.Row="0" Grid.Column="1" ExpandDirection="Right">
-            <StackPanel>
-                <TextBlock Width="500" Text="Optimization App" FontSize="30" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Top" Margin="10"/>
-                <TextBlock Width="500" Text="Welcome to the Optimization App! This application is designed to help you optimize your system's performance by cleaning up temporary files, managing disk space, and providing access to advanced settings." 
-                           FontSize="16" TextWrapping="Wrap" Margin="10,60,10,10"/>
+        
+        <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
+                <Button x:Name="btnStart" Content="Start" FontSize="25" FontWeight="DemiBold" Height="40" Background="White" Click="btnStart_Click" />
+                <Button x:Name="btnTempFiles" Content="Temp Files" FontSize="15" Height="40" Background="White" Click="btnTemp_Click"/>
+                <Button x:Name="btnBasicDisk" Content="Basic Disk" FontSize="15" Height="40" Background="White" Click="btnDisk_Click"/>
+                <Button x:Name="btnDeepTempFiles" Content="Deep Temp Files" FontSize="15" Height="40" Background="White" Click="btnDeepTemp_Click"/>
+                <Button x:Name="btnPrefetch" Content="Prefetch" FontSize="15" Height="40" Background="White" Click="btnPrefetch_Click"/>
+                <Button x:Name="btnEventViewer" Content="Event Viewer" FontSize="15" Height="40" Background="White" Click="btnEvent_Click"/>
+                <Button x:Name="btnAdvancedDisk" Content="Advanced Disk" FontSize="15" Height="40" Background="White" Click="btnAdvDisk_Click"/>
+                <Button x:Name="btnNvidiaSettings" Content="Nvidia Settings" FontSize="15" Height="40" Background="White" Click="btnNvidia_Click"/>
             </StackPanel>
-        </Expander>
+        </ScrollViewer>
+
+        <Frame Name="menuFrame" NavigationUIVisibility="Hidden" Grid.Row="0" Grid.Column="1"/>
     </Grid>
 </Window>
