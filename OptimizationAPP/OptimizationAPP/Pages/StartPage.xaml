@@ -24,8 +24,8 @@
         BorderThickness="0,0,1,1" Opacity="0.5"/>
 
         <StackPanel Grid.Row="0"  Margin="36,28,36,0">
-            <TextBlock x:Name="txtTag" Text="// MODULE_00" FontFamily="Courier New" FontSize="11" Foreground="{StaticResource MagentaBrush}" Margin="0,0,0,6"/>
-            <TextBlock x:Name="txtTitulo" Text="OPTIMIZATION_RESOURCE" FontFamily="Courier New" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CyanBrush}" Margin="0,0,0,4"/>
+            <TextBlock Text="{DynamicResource TagHome}" FontFamily="Courier New" FontSize="11" Foreground="{StaticResource MagentaBrush}" Margin="0,0,0,6"/>
+            <TextBlock Text="{DynamicResource TituloHome}" FontFamily="Courier New" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CyanBrush}" Margin="0,0,0,4"/>
 
             <Rectangle Height="1" Margin="0,5,0,16">
                 <Rectangle.Fill>
@@ -37,12 +37,26 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <TextBlock x:Name="txtDescription" Text="Welcome to the Optimization App! This application is designed to help you optimize your system's performance by cleaning up temporary files, managing disk space, and providing access to advanced settings." 
-                       FontSize="15" Foreground="#9E9E9E" TextWrapping="Wrap" LineHeight="22" Margin="0,0,0,28"/>
+            <TextBlock Text="{DynamicResource DescHome1}"
+                       FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,24"/>
+            <TextBlock Text="{DynamicResource DescHome2}"
+                        FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,6"/>
+            <TextBlock Text="{DynamicResource DescHome3}"
+                        FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,24"/>
+            <TextBlock Text="{DynamicResource DescHome4}"
+                        FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,6"/>
+            <TextBlock Text="{DynamicResource DescHome5}"
+                        FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,6"/>
+            <TextBlock Text="{DynamicResource DescHome6}"
+                        FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,6"/>
+            <TextBlock Text="{DynamicResource DescHome7}"
+                        FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,24"/>
+            <TextBlock Text="{DynamicResource DescHome8}"
+                        FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,12"/>
         </StackPanel>
         
         <Grid Grid.Row="1" Margin="36,0,36,20">
-            <Button x:Name="btnSiguiente" Content="SIGUIENTE ▶" Style="{StaticResource BtnSecondary}" Width="120" Height="32" HorizontalAlignment="Right" Click="btnSiguiente_Click"/>
+            <Button x:Name="btnSiguiente" Content="{DynamicResource BtnSiguiente}" Style="{StaticResource BtnSecondary}" Width="120" Height="32" HorizontalAlignment="Right" Click="btnSiguiente_Click"/>
         </Grid>
     </Grid>
 

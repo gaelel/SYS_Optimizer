@@ -24,8 +24,8 @@
         BorderThickness="0,0,1,1" Opacity="0.5"/>
 
         <StackPanel Grid.Row="0"  Margin="36,28,36,0">
-            <TextBlock x:Name="txtTag" Text="// MODULE_01" FontFamily="Courier New" FontSize="11" Foreground="{StaticResource MagentaBrush}" Margin="0,0,0,6"/>
-            <TextBlock x:Name="txtTitle" Text="TEMP_FILES" FontFamily="Courier New" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CyanBrush}" Margin="0,0,0,4"/>
+            <TextBlock Text="{DynamicResource TagTemp}" FontFamily="Courier New" FontSize="11" Foreground="{StaticResource MagentaBrush}" Margin="0,0,0,6"/>
+            <TextBlock Text="{DynamicResource TituloTemp}" FontFamily="Courier New" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CyanBrush}" Margin="0,0,0,4"/>
 
             <Rectangle Height="1" Margin="0,5,0,16">
                 <Rectangle.Fill>
@@ -36,15 +36,21 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            
-            <TextBlock x:Name="txtDesc" Text="Elimina los archivos temporales almacenados en %temp%. Estos archivos suelen ser residuos de instalaciones y programas que ya no son necesarios." 
-                           FontSize="15" Foreground="#9E9E9E" TextWrapping="Wrap" LineHeight="22" Margin="0,0,0,28"/>
-            <Button x:Name="btnIniciar" Content="[ LIMPIAR ]" Style="{StaticResource BtnPrimary}" Width="180" Height="38" HorizontalAlignment="Left" Click="btnIniciar_Click"/>
+
+            <TextBlock Text="{DynamicResource DescTemp1}"
+                           FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,16"/>
+            <TextBlock Text="{DynamicResource DescTemp2}"
+               FontSize="15" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,12"/>
+            <TextBlock Text="{DynamicResource DescTemp3}"
+               FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,16"/>
+            <TextBlock Text="{DynamicResource DescTemp4}"
+               FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,12"/>
+            <Button x:Name="btnIniciar" Content="{DynamicResource BtnLimpiar}" Style="{StaticResource BtnPrimary}" Width="180" Height="38" HorizontalAlignment="Left" Click="btnIniciar_Click"/>
         </StackPanel>
 
         <Grid Grid.Row="1" Margin="36,0,36,20">
-            <Button x:Name="btnSiguiente" Content="SIGUIENTE ▶" Style="{StaticResource BtnSecondary}" Width="120" Height="32" HorizontalAlignment="Right" Click="btnSiguiente_Click"/>
-            <Button x:Name="btnAnterior" Content="◀ ANTERIOR" Style="{StaticResource BtnSecondary}" Width="120" Height="32" HorizontalAlignment="Left" Click="btnAnterior_Click"/>
+            <Button x:Name="btnSiguiente" Content="{DynamicResource BtnSiguiente}" Style="{StaticResource BtnSecondary}" Width="120" Height="32" HorizontalAlignment="Right" Click="btnSiguiente_Click"/>
+            <Button x:Name="btnAnterior" Content="{DynamicResource BtnAnterior}" Style="{StaticResource BtnSecondary}" Width="120" Height="32" HorizontalAlignment="Left" Click="btnAnterior_Click"/>
         </Grid>
     </Grid>
 </Page>

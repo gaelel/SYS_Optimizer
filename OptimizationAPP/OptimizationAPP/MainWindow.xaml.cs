@@ -15,6 +15,7 @@ namespace OptimizationAPP
             _isAdmin = PermisosHelper.IsAdmin();
             ConfigurarAccesoModulos();
             menuFrame.Navigate(new StartPage());
+            ActualizarBotonesIdioma(Properties.Settings.Default.Language);
         }
 
         private void ConfigurarAccesoModulos()
@@ -72,6 +73,42 @@ namespace OptimizationAPP
         private void btnNvidia_Click(object sender, RoutedEventArgs e)
         {
             menuFrame.Navigate(new NvidiaPage());
+        }
+
+        private void ActualizarBotonesIdioma(string idiomaActivo)
+        {
+            if (idiomaActivo == "es")
+            {
+                btnEsp.Background = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#008080"));
+                btnEsp.Foreground = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#00FFFF"));
+                btnEsp.BorderBrush = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#00FFFF"));
+
+                btnEng.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.Transparent);
+                btnEng.Foreground = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#9E9E9E"));
+                btnEng.BorderBrush = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#333333"));
+            }
+            else
+            {
+                btnEng.Background = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#008080"));
+                btnEng.Foreground = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#00FFFF"));
+                btnEng.BorderBrush = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#00FFFF"));
+
+                btnEsp.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.Transparent);
+                btnEsp.Foreground = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#9E9E9E"));
+                btnEsp.BorderBrush = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString("#333333"));
+            }
+        }
+
+        private void btnEng_Click(object sender, RoutedEventArgs e)
+        {
+            LanguageManager.SetLanguage("en");
+            ActualizarBotonesIdioma("en");
+        }
+
+        private void btnEsp_Click(object sender, RoutedEventArgs e)
+        {
+            LanguageManager.SetLanguage("es");
+            ActualizarBotonesIdioma("es");
         }
     }
 }

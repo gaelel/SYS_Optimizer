@@ -16,11 +16,23 @@
             <ColumnDefinition Width="220"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
+       
         <Border Grid.Column="0" Background="#0A0A0F" BorderBrush="#00A8A8" BorderThickness="0,0,1,0">
             <DockPanel>
                 <Border DockPanel.Dock="Top" BorderBrush="#008080" BorderThickness="0,0,0,1" Padding="14,12">
                     <TextBlock Text="// SYS_MODULES" FontSize="11" FontFamily="Courier New" Foreground="#00FFFF"/>
+                </Border>
+                
+                <Border DockPanel.Dock="Bottom" BorderThickness="0,1,0,0" BorderBrush="#008080" Padding="10,8">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="btnEsp" Grid.Column="0" Content="[ ES-MX ]" FontFamily="Courier New" FontSize="11" Cursor="Hand" Click="btnEsp_Click" Style="{StaticResource BtnIdioma}"/>
+                        <Button x:Name="btnEng" Grid.Column="1" Content="[ EN-USA ]" FontFamily="Courier New" FontSize="11" Cursor="Hand" Click="btnEng_Click" Style="{StaticResource BtnIdioma}"/>
+                    </Grid>
                 </Border>
 
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">

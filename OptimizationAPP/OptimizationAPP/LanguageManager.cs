@@ -1,34 +1,58 @@
-﻿using System.Globalization;
-using System.Resources;
+﻿using OptimizationAPP.Properties;
+using System.Windows;
 
 namespace OptimizationAPP.Utilitys
 {
     public static class LanguageManager
     {
-        private static ResourceManager _resourceManager;
 
         public static void SetLanguage(string languageCode)
         {
-            _resourceManager = new ResourceManager($"OptimizationAPP.Strings.{languageCode}", typeof(LanguageManager).Assembly);
+            if (languageCode.StartsWith("en")) languageCode = "en";
+            if (languageCode.StartsWith("es")) languageCode = "es";
 
-            Properties.Settings.Default.Language = languageCode;
-            Properties.Settings.Default.Save();
+            string ruta = languageCode == "es"
+                ? "pack://application:,,,/Resources/Lang.es.xaml"
+                : "pack://application:,,,/Resources/Lang.en.xaml";
+
+            var dict = new ResourceDictionary
+            {
+                Source = new Uri(ruta, UriKind.Absolute)
+            };
+
+            var existing = FindLanguageDictionary();
+            if (existing != null) Application.Current.Resources.MergedDictionaries.Remove(existing);
+
+            Application.Current.Resources.MergedDictionaries.Add(dict);
+
+            Settings.Default.Language = languageCode;
+            Settings.Default.Save();
         }
 
         public static string Get(string key)
         {
-            if (_resourceManager == null) return key;
-            return _resourceManager.GetString(key) ?? key;
+            if (Application.Current.Resources.Contains(key)) return Application.Current.Resources[key] as string ?? key;
+            return key;
         }
 
         public static bool HasSavedLanguage()
         {
-            return !string.IsNullOrEmpty(Properties.Settings.Default.Language);
+            return !string.IsNullOrEmpty(Settings.Default.Language);
         }
 
         public static void LoadSavedLanguage()
         {
-            SetLanguage(Properties.Settings.Default.Language);
+            SetLanguage(Settings.Default.Language);
+        }
+
+        private static ResourceDictionary FindLanguageDictionary()
+        {
+            foreach (var dict in Application.Current.Resources.MergedDictionaries)
+            {
+                if (dict.Source != null && (dict.Source.OriginalString.Contains("Lang.es") || dict.Source.OriginalString.Contains("Lang.en")))
+                    return dict;
+            }
+            return null;
         }
     }
 }

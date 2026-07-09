@@ -1,5 +1,4 @@
-﻿using OptimizationAPP.Utilitys;
-using System.IO;
+﻿using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,16 +18,6 @@ namespace OptimizationAPP
         public DiskPage()
         {
             InitializeComponent();
-            LoadTexts();
-        }
-        private void LoadTexts()
-        {
-            txtTag.Text = LanguageManager.Get("TagDisk");
-            txtTitle.Text = LanguageManager.Get("TituloDisk");
-            txtDesc.Text = LanguageManager.Get("DescDisk");
-            btnIniciar.Content = LanguageManager.Get("BtnIniciar");
-            btnSiguiente.Content = LanguageManager.Get("BtnSiguiente");
-            btnAnterior.Content = LanguageManager.Get("BtnAnterior");
         }
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)

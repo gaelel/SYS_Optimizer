@@ -1,0 +1,72 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="BtnLimpiar">[ LIMPIAR ]</sys:String>
+    <sys:String x:Key="BtnSiguiente">SIGUIENTE ▶</sys:String>
+    <sys:String x:Key="BtnAnterior">◀ ANTERIOR</sys:String>
+    <sys:String x:Key="BtnTerminar">TERMINAR ▶</sys:String>
+
+    <!-- HOME -->
+    <sys:String x:Key="TagHome">// MODULO_00</sys:String>
+    <sys:String x:Key="TituloHome">INICIO</sys:String>
+    <sys:String x:Key="DescHome1">SYS_OPTIMIZER es una herramienta de mantenimiento diseñado para liberar espacio y mantener el sistema limpio eliminando archivos innecesarios acumulados por Windows.</sys:String>
+    <sys:String x:Key="DescHome2">MÓDULOS DISPONIBLES:</sys:String>
+    <sys:String x:Key="DescHome3">Encontrarás 6 módulos de limpieza organizados por nivel de acceso. Los módulos básicos (Temp Files, Basic Disk) no requieren permisos especiales. Los módulos avanzados (Deep Temp, Prefetch, Event Log, Adv Disk) requieren ejecutar la app como Administrador.</sys:String>
+    <sys:String x:Key="DescHome4">ANTES DE INICIAR — RECOMENDACIONES:</sys:String>
+    <sys:String x:Key="DescHome5">> Crea un punto de restauración del sistema antes de ejecutar cualquier módulo. Panel de Control → Sistema → Protección del sistema → Crear.</sys:String>
+    <sys:String x:Key="DescHome6">> Cierra todos los programas abiertos para evitar conflictos con archivos en uso.</sys:String>
+    <sys:String x:Key="DescHome7">> No interrumpas el proceso una vez iniciado.</sys:String>
+    <sys:String x:Key="DescHome8">AVISO LEGAL: El uso de esta herramienta es responsabilidad exclusiva del usuario. El desarrollador no se hace responsable por pérdida de datos, mal funcionamiento del sistema o cualquier daño derivado del uso de esta aplicación. Procede bajo tu propio criterio.</sys:String>
+
+    <!-- TEMP FILES -->
+    <sys:String x:Key="TagTemp">// MODULO_01</sys:String>
+    <sys:String x:Key="TituloTemp">ARCHIVOS_TEMP</sys:String>
+    <sys:String x:Key="DescTemp1">Elimina los archivos temporales del usuario almacenados en %TEMP%. Windows y las aplicaciones generan estos archivos durante su funcionamiento como caché de instalaciones, archivos de sesión y datos de trabajo temporal. Con el tiempo se acumulan y ocupan espacio innecesario.</sys:String>
+    <sys:String x:Key="DescTemp2">RIESGO: BAJO</sys:String>
+    <sys:String x:Key="DescTemp3">Los archivos en %TEMP% son descartables por diseño. Windows y las aplicaciones los regeneran automáticamente cuando los necesitan. Es posible que algunos archivos estén en uso por procesos activos — estos serán omitidos automáticamente.</sys:String>
+    <sys:String x:Key="DescTemp4">RECOMENDACIÓN: Cierra todos los programas antes de ejecutar este módulo para maximizar los archivos que se pueden eliminar.</sys:String>
+
+    <!-- DISK PAGE -->
+    <sys:String x:Key="TagDisk">// MODULO_02</sys:String>
+    <sys:String x:Key="TituloDisk">DISCO</sys:String>
+    <sys:String x:Key="DescDisk1">Realiza una limpieza básica del disco eliminando tres categorías de archivos residuales: papelera de reciclaje, caché de miniaturas de Windows Explorer y reportes de errores del sistema (WER) generados por aplicaciones que han fallado anteriormente.</sys:String>
+    <sys:String x:Key="DescDisk2">RIESGO: BAJO</sys:String>
+    <sys:String x:Key="DescDisk3">La papelera se vacía permanentemente — asegúrate de no necesitar recuperar nada antes de ejecutar. Las miniaturas se regeneran automáticamente la próxima vez que abres una carpeta con imágenes. Los reportes de error son logs de diagnóstico que Windows genera automáticamente y no afectan el funcionamiento del sistema.</sys:String>
+
+    <!-- NVIDIA PAGE -->
+    <sys:String x:Key="TagNvidia">// MODULO_03</sys:String>
+    <sys:String x:Key="TituloNvidia">AJUSTES_NVIDIA</sys:String>
+    <sys:String x:Key="DescNvidia1">Módulo reservado para configuraciones recomendadas del panel de control de NVIDIA: ajustes de rendimiento, gestión de energía y optimización para uso general o gaming.</sys:String>
+    <sys:String x:Key="DescNvidia2">ESTADO: EN DESARROLLO</sys:String>
+    <sys:String x:Key="DescNvidia3">Esta funcionalidad estará disponible en una próxima versión de SYS_OPTIMIZER. Navega al siguiente módulo para continuar con la optimización del sistema.</sys:String>
+
+    <!-- DEEP TEMP FILES -->
+    <sys:String x:Key="TagDeepTemp">// MODULO_04</sys:String>
+    <sys:String x:Key="TituloDeepTemp">MAS_ARCHIVOS_TEMP</sys:String>
+    <sys:String x:Key="DescDeepTemp1">Elimina los archivos temporales globales del sistema almacenados en C:\Windows\Temp. A diferencia de %TEMP% que pertenece al usuario actual, esta carpeta es compartida por Windows y todos los procesos del sistema para almacenar archivos de trabajo temporal.</sys:String>
+    <sys:String x:Key="DescDeepTemp2">RIESGO: BAJO — REQUIERE ADMINISTRADOR</sys:String>
+    <sys:String x:Key="DescDeepTemp3">Los archivos en esta carpeta son residuos de procesos del sistema que ya finalizaron. Windows los regenera cuando los necesita. Algunos archivos pueden estar en uso por servicios activos del sistema — estos serán omitidos automáticamente.</sys:String>
+
+    <!-- PREFETCH -->
+    <sys:String x:Key="TagPrefetch">// MODULO_05</sys:String>
+    <sys:String x:Key="TituloPrefetch">PREFETCH</sys:String>
+    <sys:String x:Key="DescPrefetch1">Elimina los archivos .pf almacenados en C:\Windows\Prefetch. Windows genera estos archivos para acelerar la carga de programas frecuentes, almacenando un mapa de qué recursos necesita cada aplicación al iniciarse.</sys:String>
+    <sys:String x:Key="DescPrefetch2">RIESGO: BAJO — REQUIERE ADMINISTRADOR</sys:String>
+    <sys:String x:Key="DescPrefetch3">Eliminar los archivos de Prefetch no daña el sistema ni las aplicaciones. El único efecto visible es que los programas pueden tardar ligeramente más en abrirse la primera vez después de la limpieza, mientras Windows regenera los archivos de Prefetch automáticamente con el uso normal.</sys:String>
+
+    <!-- EVENT VIEWER -->
+    <sys:String x:Key="TagEvent">// MODULO_06</sys:String>
+    <sys:String x:Key="TituloEvent">VISOR_DE_EVENTOS</sys:String>
+    <sys:String x:Key="DescEvent1">Limpia los registros de eventos de Windows: Application, Security, Setup y System. El Visor de Eventos almacena un historial de actividad del sistema, errores de aplicaciones y eventos de seguridad. Con el tiempo estos logs acumulan miles de entradas que ocupan espacio y dificultan encontrar eventos relevantes.</sys:String>
+    <sys:String x:Key="DescEvent2">RIESGO: BAJO — REQUIERE ADMINISTRADOR</sys:String>
+    <sys:String x:Key="DescEvent3">Limpiar los logs no afecta el funcionamiento del sistema. Su utilidad principal es de diagnóstico: si sospechas de un problema en tu sistema o planeas llamar a soporte técnico próximamente, considera posponer este módulo para preservar el historial de eventos reciente.</sys:String>
+
+    <!-- ADVANCED DISK -->
+    <sys:String x:Key="TagAdvDisk">// MODULO_07</sys:String>
+    <sys:String x:Key="TituloAdvDisk">DISCO_AVANZADO</sys:String>
+    <sys:String x:Key="DescAdvDisk1">Limpieza avanzada del disco eliminando tres categorías de archivos de alto impacto: descargas residuales de Windows Update en SoftwareDistribution\Download, la carpeta Windows.old generada al actualizar de versión de Windows, y logs acumulados del sistema en C:\Windows\Logs.</sys:String>
+    <sys:String x:Key="DescAdvDisk2">RIESGO: MEDIO — REQUIERE ADMINISTRADOR</sys:String>
+    <sys:String x:Key="DescAdvDisk3">Windows.old puede liberar entre 10 y 20 GB pero su eliminación es permanente — ya no podrás revertir a la versión anterior de Windows una vez borrada. Las descargas de Windows Update eliminadas se volverán a descargar si el sistema necesita reinstalar alguna actualización. Se recomienda crear un punto de restauración antes de ejecutar este módulo.</sys:String>
+
+</ResourceDictionary>

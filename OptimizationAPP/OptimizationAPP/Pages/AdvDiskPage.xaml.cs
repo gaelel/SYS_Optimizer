@@ -1,5 +1,4 @@
-﻿using OptimizationAPP.Utilitys;
-using System.IO;
+﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -11,17 +10,6 @@ namespace OptimizationAPP.Pages
         public AdvDiskPage()
         {
             InitializeComponent();
-            LoadTexts();
-        }
-
-        private void LoadTexts()
-        {
-            txtTag.Text = LanguageManager.Get("TagAdvDisk");
-            txtTitle.Text = LanguageManager.Get("TituloAdvDisk");
-            txtDesc.Text = LanguageManager.Get("DescAdvDisk");
-            btnIniciar.Content = LanguageManager.Get("BtnIniciar");
-            btnSiguiente.Content = LanguageManager.Get("BtnSiguiente");
-            btnAnterior.Content = LanguageManager.Get("BtnAnterior");
         }
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)

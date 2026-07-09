@@ -24,8 +24,8 @@
         BorderThickness="0,0,1,1" Opacity="0.5"/>
 
         <StackPanel Grid.Row="0"  Margin="36,28,26,0">
-            <TextBlock x:Name="txtTag" Text="// MODULE_06" FontFamily="Courier New" FontSize="11" Foreground="{StaticResource MagentaBrush}" Margin="0,0,0,6"/>
-            <TextBlock x:Name="txtTitle" Text="EVENT_VIEWER" FontFamily="Courier New" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CyanBrush}" Margin="0,0,0,4"/>
+            <TextBlock Text="{DynamicResource TagEvent}" FontFamily="Courier New" FontSize="11" Foreground="{StaticResource MagentaBrush}" Margin="0,0,0,6"/>
+            <TextBlock Text="{DynamicResource TituloEvent}" FontFamily="Courier New" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CyanBrush}" Margin="0,0,0,4"/>
 
             <Rectangle Height="1" Margin="0,5,0,16">
                 <Rectangle.Fill>
@@ -37,14 +37,18 @@
                 </Rectangle.Fill>
             </Rectangle>
             
-            <TextBlock x:Name="txtDesc" Text="Elimina los eventos pasados en el apartado Event Viewer. En realidad no ayuda mucho al rendimiento este apartado, solo ayuda a mantener limpios los eventos para si ocurre un problema poder encontrar los eventos mas rapidos" 
-                       FontSize="15" Foreground="#9E9E9E" TextWrapping="Wrap" LineHeight="22" Margin="0,0,0,28"/>
-            <Button x:Name="btnIniciar" Content="[ LIMPIAR ]" Style="{StaticResource BtnPrimary}" Width="180" Height="38" HorizontalAlignment="Left" Click="btnIniciar_Click"/>
+            <TextBlock Text="{DynamicResource DescEvent1}" 
+                       FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,16"/>
+            <TextBlock Text="{DynamicResource DescEvent2}" 
+                        FontSize="15" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,16"/>
+            <TextBlock Text="{DynamicResource DescEvent3}" 
+                        FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,16"/>
+            <Button x:Name="btnIniciar" Content="{DynamicResource BtnLimpiar}" Style="{StaticResource BtnPrimary}" Width="180" Height="38" HorizontalAlignment="Left" Click="btnIniciar_Click"/>
         </StackPanel>
         
         <Grid Grid.Row="1" Margin="36,0,36,20">
-            <Button x:Name="btnSiguiente" Content="SIGUIENTE ▶" Style="{StaticResource BtnSecondary}" Width="120" Height="32" HorizontalAlignment="Right" Click="btnSiguiente_Click"/>
-            <Button x:Name="btnAnterior" Content="ANTERIOR" Style="{StaticResource BtnSecondary}" Width="120" Height="32" HorizontalAlignment="Left" Click="btnAnterior_Click"/>
+            <Button x:Name="btnSiguiente" Content="{DynamicResource BtnSiguiente}" Style="{StaticResource BtnSecondary}" Width="120" Height="32" HorizontalAlignment="Right" Click="btnSiguiente_Click"/>
+            <Button x:Name="btnAnterior" Content="{DynamicResource BtnAnterior}" Style="{StaticResource BtnSecondary}" Width="120" Height="32" HorizontalAlignment="Left" Click="btnAnterior_Click"/>
         </Grid>
     </Grid>
 </Page>

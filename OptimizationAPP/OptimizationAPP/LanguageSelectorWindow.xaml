@@ -35,7 +35,7 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="btnSpanish" Content="[ ESPAÑOL ] " Style="{StaticResource BtnPrimary}" Width="160" Height="40" Margin="0,0,16,0" Click="btnSpanish_Click"/>
-                <Button x:Name="btnEnglish" Content="[ ENGLISH ]" Style="{StaticResource BtnSecondary}" Width="160" Height="40" Click="btnEnglish_Click"/>
+                <Button x:Name="btnEnglish" Content="[ ENGLISH ]" Style="{StaticResource BtnEn}" Width="160" Height="40" Click="btnEnglish_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

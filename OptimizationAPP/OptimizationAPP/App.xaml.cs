@@ -1,4 +1,5 @@
-﻿using OptimizationAPP.Utilitys;
+﻿using OptimizationAPP.Properties;
+using OptimizationAPP.Utilitys;
 using System.Windows;
 
 namespace OptimizationAPP
@@ -9,14 +10,21 @@ namespace OptimizationAPP
         {
             base.OnStartup(e);
 
-            if (LanguageManager.HasSavedLanguage())
+            try
             {
-               LanguageManager.LoadSavedLanguage();
-                new MainWindow().Show();
+                if (LanguageManager.HasSavedLanguage())
+                {
+                    LanguageManager.LoadSavedLanguage();
+                    new MainWindow().Show();
+                }
+                else
+                {
+                    new LanguageSelectorWindow().Show();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                new LanguageSelectorWindow().Show();
+                MessageBox.Show($"Error: {ex.Message}\n\nInner: {ex.InnerException?.Message}\n\nStack: {ex.StackTrace}");
             }
         }
     }

@@ -12,19 +12,19 @@ namespace OptimizationAPP
 
         private void btnSpanish_Click(object sender, RoutedEventArgs e)
         {
-            LanguageManager.SetLanguage("es-ES");
+            LanguageManager.SetLanguage("es");
             AbrirMainWindow();
         }
 
         private void btnEnglish_Click(object sender, RoutedEventArgs e)
         {
-            LanguageManager.SetLanguage("en-US");
+            LanguageManager.SetLanguage("en");
             AbrirMainWindow();
         }
 
         private void AbrirMainWindow()
         {
-            MainWindow mainWindow = new MainWindow();
+            var mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
         }
